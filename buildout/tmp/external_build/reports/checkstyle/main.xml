@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="7.8.1">
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\QuizApplication.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\controller\QuestionController.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\dto\OnlyQuestion.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\dto\Question.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\dto\Response.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\dto\Summary.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\exchanges\ProvideQuestionsResponse.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\exchanges\SubmitQuestionRequest.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\exchanges\SubmitQuestionResponse.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\model\QuestionEntity.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\repository\QuestionRepository.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\repositoryservices\QuestionRepositoryService.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\repositoryservices\QuestionRepositoryServiceImpl.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\services\QuestionService.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\services\QuestionServiceImpl.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\util\FixtureHelpers.java">
+</file>
+</checkstyle>

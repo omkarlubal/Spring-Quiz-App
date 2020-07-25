@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
+    version="6.10.0" timestamp="2020-07-21T12:35:30.207">
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\controller\QuestionController.java">
+<violation beginline="23" endline="23" begincolumn="19" endcolumn="33" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.omkarlubal.quiz.controller" class="QuestionController" variable="questionService" externalInfoUrl="https://pmd.github.io/pmd-6.10.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\repositoryservices\QuestionRepositoryServiceImpl.java">
+<violation beginline="20" endline="20" begincolumn="22" endcolumn="39" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.omkarlubal.quiz.repositoryservices" class="QuestionRepositoryServiceImpl" variable="questionRepository" externalInfoUrl="https://pmd.github.io/pmd-6.10.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="22" endline="27" begincolumn="7" endcolumn="51" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.omkarlubal.quiz.repositoryservices" class="QuestionRepositoryServiceImpl" method="convertEntityToOnlyQuestion" variable="questionEntity" externalInfoUrl="https://pmd.github.io/pmd-6.10.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'UR'-anomaly for variable 'questionEntity' (lines '22'-'27').
+</violation>
+<violation beginline="23" endline="32" begincolumn="17" endcolumn="47" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.omkarlubal.quiz.repositoryservices" class="QuestionRepositoryServiceImpl" method="convertEntityToOnlyQuestion" variable="modelMapper" externalInfoUrl="https://pmd.github.io/pmd-6.10.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'modelMapper' (lines '23'-'32').
+</violation>
+<violation beginline="41" endline="57" begincolumn="7" endcolumn="47" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.omkarlubal.quiz.repositoryservices" class="QuestionRepositoryServiceImpl" method="convertEntityToQuestionAnswer" variable="questionEntity" externalInfoUrl="https://pmd.github.io/pmd-6.10.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'UR'-anomaly for variable 'questionEntity' (lines '41'-'57').
+</violation>
+<violation beginline="41" endline="57" begincolumn="7" endcolumn="47" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.omkarlubal.quiz.repositoryservices" class="QuestionRepositoryServiceImpl" method="convertEntityToQuestionAnswer" variable="questionEntity" externalInfoUrl="https://pmd.github.io/pmd-6.10.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'UR'-anomaly for variable 'questionEntity' (lines '41'-'57').
+</violation>
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java\com\omkarlubal\quiz\services\QuestionServiceImpl.java">
+<violation beginline="25" endline="25" begincolumn="29" endcolumn="53" rule="BeanMembersShouldSerialize" ruleset="Error Prone" package="com.omkarlubal.quiz.services" class="QuestionServiceImpl" variable="questionRepositoryService" externalInfoUrl="https://pmd.github.io/pmd-6.10.0/pmd_rules_java_errorprone.html#beanmembersshouldserialize" priority="3">
+Found non-transient, non-static member. Please mark as transient or provide accessors.
+</violation>
+<violation beginline="36" endline="47" begincolumn="11" endcolumn="38" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.omkarlubal.quiz.services" class="QuestionServiceImpl" method="checkAnswers" variable="answer" externalInfoUrl="https://pmd.github.io/pmd-6.10.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'UR'-anomaly for variable 'answer' (lines '36'-'47').
+</violation>
+<violation beginline="45" endline="52" begincolumn="17" endcolumn="57" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.omkarlubal.quiz.services" class="QuestionServiceImpl" method="checkAnswers" variable="correctSet" externalInfoUrl="https://pmd.github.io/pmd-6.10.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DU'-anomaly for variable 'correctSet' (lines '45'-'52').
+</violation>
+<violation beginline="68" endline="71" begincolumn="11" endcolumn="36" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.omkarlubal.quiz.services" class="QuestionServiceImpl" method="calculateSummary" variable="question" externalInfoUrl="https://pmd.github.io/pmd-6.10.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'UR'-anomaly for variable 'question' (lines '68'-'71').
+</violation>
+<violation beginline="69" endline="72" begincolumn="9" endcolumn="23" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.omkarlubal.quiz.services" class="QuestionServiceImpl" method="calculateSummary" variable="correctAnswer" externalInfoUrl="https://pmd.github.io/pmd-6.10.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'correctAnswer' (lines '69'-'72').
+</violation>
+<violation beginline="72" endline="72" begincolumn="9" endcolumn="23" rule="DataflowAnomalyAnalysis" ruleset="Error Prone" package="com.omkarlubal.quiz.services" class="QuestionServiceImpl" method="calculateSummary" variable="correctAnswer" externalInfoUrl="https://pmd.github.io/pmd-6.10.0/pmd_rules_java_errorprone.html#dataflowanomalyanalysis" priority="5">
+Found 'DD'-anomaly for variable 'correctAnswer' (lines '72'-'72').
+</violation>
+</file>
+</pmd>

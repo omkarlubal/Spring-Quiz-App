@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BugCollection tool="SonarLint" version="4.10.0.17000" analysisTimestamp="1595315165235" timestamp="1595315165235">
+  <Project projectName="project ':buildout'">
+    <SrcDir>E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\resources</SrcDir>
+    <SrcDir>E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\main\java</SrcDir>
+  </Project>
+  <BugInstance type="java:S1226" priority="4">
+    <LongMessage>Method parameters, caught exceptions and foreach variables' initial values should not be ignored</LongMessage>
+    <SourceLine sourcepath="com/omkarlubal/quiz/controller/QuestionController.java" sourcefile="com/omkarlubal/quiz/controller/QuestionController.java" start="27" startOffset="4" end="27" endOffset="12" />
+  </BugInstance>
+  <BugInstance type="java:S1226" priority="4">
+    <LongMessage>Method parameters, caught exceptions and foreach variables' initial values should not be ignored</LongMessage>
+    <SourceLine sourcepath="com/omkarlubal/quiz/controller/QuestionController.java" sourcefile="com/omkarlubal/quiz/controller/QuestionController.java" start="35" startOffset="4" end="35" endOffset="12" />
+  </BugInstance>
+  <BugInstance type="java:S1488" priority="4">
+    <LongMessage>Local variables should not be declared and then immediately returned or thrown</LongMessage>
+    <SourceLine sourcepath="com/omkarlubal/quiz/controller/QuestionController.java" sourcefile="com/omkarlubal/quiz/controller/QuestionController.java" start="28" startOffset="56" end="28" endOffset="99" />
+  </BugInstance>
+  <BugInstance type="java:S1488" priority="4">
+    <LongMessage>Local variables should not be declared and then immediately returned or thrown</LongMessage>
+    <SourceLine sourcepath="com/omkarlubal/quiz/controller/QuestionController.java" sourcefile="com/omkarlubal/quiz/controller/QuestionController.java" start="38" startOffset="8" end="38" endOffset="86" />
+  </BugInstance>
+  <BugInstance type="java:S1488" priority="4">
+    <LongMessage>Local variables should not be declared and then immediately returned or thrown</LongMessage>
+    <SourceLine sourcepath="com/omkarlubal/quiz/repositoryservices/QuestionRepositoryServiceImpl.java" sourcefile="com/omkarlubal/quiz/repositoryservices/QuestionRepositoryServiceImpl.java" start="37" startOffset="39" end="37" endOffset="80" />
+  </BugInstance>
+  <BugInstance type="java:S1488" priority="4">
+    <LongMessage>Local variables should not be declared and then immediately returned or thrown</LongMessage>
+    <SourceLine sourcepath="com/omkarlubal/quiz/repositoryservices/QuestionRepositoryServiceImpl.java" sourcefile="com/omkarlubal/quiz/repositoryservices/QuestionRepositoryServiceImpl.java" start="67" startOffset="42" end="67" endOffset="85" />
+  </BugInstance>
+  <BugInstance type="java:S1488" priority="4">
+    <LongMessage>Local variables should not be declared and then immediately returned or thrown</LongMessage>
+    <SourceLine sourcepath="com/omkarlubal/quiz/services/QuestionServiceImpl.java" sourcefile="com/omkarlubal/quiz/services/QuestionServiceImpl.java" start="32" startOffset="56" end="32" endOffset="99" />
+  </BugInstance>
+  <BugInstance type="java:S1488" priority="4">
+    <LongMessage>Local variables should not be declared and then immediately returned or thrown</LongMessage>
+    <SourceLine sourcepath="com/omkarlubal/quiz/services/QuestionServiceImpl.java" sourcefile="com/omkarlubal/quiz/services/QuestionServiceImpl.java" start="91" startOffset="52" end="92" endOffset="38" />
+  </BugInstance>
+  <BugInstance type="java:S125" priority="3">
+    <LongMessage>Sections of code should not be commented out</LongMessage>
+    <SourceLine sourcepath="com/omkarlubal/quiz/services/QuestionServiceImpl.java" sourcefile="com/omkarlubal/quiz/services/QuestionServiceImpl.java" start="40" startOffset="0" end="40" endOffset="86" />
+  </BugInstance>
+  <BugPattern type="java:S1226">
+    <Details>&lt;p&gt;While it is technically correct to assign to parameters from within method bodies, doing so before the parameter value is read is likely a bug.
+Instead, initial values of parameters, caught exceptions, and foreach parameters should be, if not treated as &lt;code&gt;final&lt;/code&gt;, then at least read
+before reassignment.&lt;/p&gt;
+&lt;h2&gt;Noncompliant Code Example&lt;/h2&gt;
+&lt;pre&gt;
+public void doTheThing(String str, int i, List&amp;lt;String&amp;gt; strings) {
+  str = Integer.toString(i); // Noncompliant
+
+  for (String s : strings) {
+    s = "hello world"; // Noncompliant
+  }
+}
+&lt;/pre&gt;</Details>
+  </BugPattern>
+  <BugPattern type="java:S125">
+    <Details>&lt;p&gt;Programmers should not comment out code as it bloats programs and reduces readability.&lt;/p&gt;
+&lt;p&gt;Unused code should be deleted and can be retrieved from source control history if required.&lt;/p&gt;</Details>
+  </BugPattern>
+  <BugPattern type="java:S1488">
+    <Details>&lt;p&gt;Declaring a variable only to immediately return or throw it is a bad practice.&lt;/p&gt;
+&lt;p&gt;Some developers argue that the practice improves code readability, because it enables them to explicitly name what is being returned. However, this
+variable is an internal implementation detail that is not exposed to the callers of the method. The method name should be sufficient for callers to
+know exactly what will be returned.&lt;/p&gt;
+&lt;h2&gt;Noncompliant Code Example&lt;/h2&gt;
+&lt;pre&gt;
+public long computeDurationInMilliseconds() {
+  long duration = (((hours * 60) + minutes) * 60 + seconds ) * 1000 ;
+  return duration;
+}
+
+public void doSomething() {
+  RuntimeException myException = new RuntimeException();
+  throw myException;
+}
+&lt;/pre&gt;
+&lt;h2&gt;Compliant Solution&lt;/h2&gt;
+&lt;pre&gt;
+public long computeDurationInMilliseconds() {
+  return (((hours * 60) + minutes) * 60 + seconds ) * 1000 ;
+}
+
+public void doSomething() {
+  throw new RuntimeException();
+}
+&lt;/pre&gt;</Details>
+  </BugPattern>
+</BugCollection>

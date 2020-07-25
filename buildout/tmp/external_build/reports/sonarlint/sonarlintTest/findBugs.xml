@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BugCollection tool="SonarLint" version="4.10.0.17000" analysisTimestamp="1595315178961" timestamp="1595315178961">
+  <Project projectName="project ':buildout'">
+    <SrcDir>E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\test\resources</SrcDir>
+    <SrcDir>E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\test\java</SrcDir>
+  </Project>
+  <BugInstance type="java:S2699" priority="1">
+    <LongMessage>Tests should include assertions</LongMessage>
+    <SourceLine sourcepath="com/crio/buildouts/HelloTest.java" sourcefile="com/crio/buildouts/HelloTest.java" start="12" startOffset="14" end="12" endOffset="18" />
+  </BugInstance>
+  <BugInstance type="java:S2187" priority="1">
+    <LongMessage>TestCases should contain tests</LongMessage>
+    <SourceLine sourcepath="com/crio/buildouts/integ/test/IntegrationTest.java" sourcefile="com/crio/buildouts/integ/test/IntegrationTest.java" start="32" startOffset="13" end="32" endOffset="28" />
+  </BugInstance>
+  <BugPattern type="java:S2187">
+    <Details>&lt;p&gt;There's no point in having a JUnit &lt;code&gt;TestCase&lt;/code&gt; without any test methods. Similarly, you shouldn't have a file in the tests directory with
+"Test" in the name, but no tests in the file. Doing either of these things may lead someone to think that uncovered classes have been tested.&lt;/p&gt;
+&lt;p&gt;This rule raises an issue when files in the test directory have "Test" in the name or implement &lt;code&gt;TestCase&lt;/code&gt; but don't contain any
+tests.&lt;/p&gt;
+&lt;p&gt;Supported frameworks: JUnit3, JUnit4, JUnit5, TestNG, Zohhak, ArchUnit&lt;/p&gt;</Details>
+  </BugPattern>
+  <BugPattern type="java:S2699">
+    <Details>&lt;p&gt;A test case without assertions ensures only that no exceptions are thrown. Beyond basic runnability, it ensures nothing about the behavior of the
+code under test.&lt;/p&gt;
+&lt;p&gt;This rule raises an exception when no assertions from any of the following known frameworks are found in a test:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt; JUnit &lt;/li&gt;
+  &lt;li&gt; Fest 1.x &lt;/li&gt;
+  &lt;li&gt; Fest 2.x &lt;/li&gt;
+  &lt;li&gt; Rest-assured 2.0 &lt;/li&gt;
+  &lt;li&gt; AssertJ &lt;/li&gt;
+  &lt;li&gt; Hamcrest &lt;/li&gt;
+  &lt;li&gt; Spring's &lt;code&gt;org.springframework.test.web.servlet.ResultActions.andExpect()&lt;/code&gt; &lt;/li&gt;
+  &lt;li&gt; Eclipse Vert.x &lt;/li&gt;
+  &lt;li&gt; Truth Framework &lt;/li&gt;
+  &lt;li&gt; Mockito &lt;/li&gt;
+  &lt;li&gt; EasyMock &lt;/li&gt;
+  &lt;li&gt; JMock &lt;/li&gt;
+  &lt;li&gt; WireMock &lt;/li&gt;
+  &lt;li&gt; RxJava 1.x &lt;/li&gt;
+  &lt;li&gt; RxJava 2.x &lt;/li&gt;
+  &lt;li&gt; Selenide &lt;/li&gt;
+  &lt;li&gt; JMockit &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Furthermore, as new or custom assertion frameworks may be used, the rule can be parametrized to define specific methods that will also be
+considered as assertions. No issue will be raised when such methods are found in test cases. The parameter value should have the following format
+&lt;code&gt;&amp;lt;FullyQualifiedClassName&amp;gt;#&amp;lt;MethodName&amp;gt;&lt;/code&gt;, where &lt;code&gt;MethodName&lt;/code&gt; can end with the wildcard character. For constructors,
+the pattern should be &lt;code&gt;&amp;lt;FullyQualifiedClassName&amp;gt;#&amp;lt;init&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Example:&amp;nbsp;&lt;code&gt;com.company.CompareToTester#compare*,com.company.CustomAssert#customAssertMethod,com.company.CheckVerifier#&amp;lt;init&amp;gt;&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Noncompliant Code Example&lt;/h2&gt;
+&lt;pre&gt;
+@Test
+public void testDoSomething() {  // Noncompliant
+  MyClass myClass = new MyClass();
+  myClass.doSomething();
+}
+&lt;/pre&gt;
+&lt;h2&gt;Compliant Solution&lt;/h2&gt;
+&lt;p&gt;Example when &lt;code&gt;com.company.CompareToTester#compare*&lt;/code&gt; is used as parameter to the rule.&lt;/p&gt;
+&lt;pre&gt;
+import com.company.CompareToTester;
+
+@Test
+public void testDoSomething() {
+  MyClass myClass = new MyClass();
+  assertNull(myClass.doSomething());  // JUnit assertion
+  assertThat(myClass.doSomething()).isNull();  // Fest assertion
+}
+
+@Test
+public void testDoSomethingElse() {
+  MyClass myClass = new MyClass();
+  new CompareToTester().compareWith(myClass);  // Compliant - custom assertion method defined as rule parameter
+  CompareToTester.compareStatic(myClass);  // Compliant
+}
+&lt;/pre&gt;</Details>
+  </BugPattern>
+</BugCollection>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="7.8.1">
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\test\java\com\crio\buildouts\HelloTest.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\test\java\com\crio\buildouts\integ\test\IntegrationTest.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\test\java\com\crio\buildouts\integ\test\configs\AssessmentConfig.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\test\java\com\crio\buildouts\repositoryservices\QuestionRepositoryServiceMockitoTest.java">
+</file>
+<file name="E:\projects\java_spring\omkarlubal-me_buildout_qa\buildout\src\test\java\com\crio\buildouts\repositoryservices\QuestionRepositoryServiceTest.java">
+</file>
+</checkstyle>
